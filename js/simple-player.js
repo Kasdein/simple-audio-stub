@@ -2,6 +2,7 @@ const currentTime = document.getElementById("currentTime")
 const totalTime = document.getElementById("totalTime")
 const playPauseButton = document.getElementById("playPauseButton")
 const seekBar = document.getElementById("seekBar")
+const volumeBar = document.getElementById("volumeBar")
 const audio = new Audio("audio/Soft-Background-for-Interview.webm");
 let isSeeking = false
 
@@ -19,7 +20,10 @@ playPauseButton.onclick = () => {
 // event triggered once audio loaded
 audio.oncanplaythrough = () => {
     seekBar.disabled = false
+    volumeBar.disabled = false
+    audio.volume = ".5"
 }
+
 // event triggered when audio plays 
 audio.onplay = () => {
     playPauseButton.src = "images/pause.svg"
@@ -32,18 +36,18 @@ audio.onpause = () => {
 audio.onloadedmetadata = () => {
     totalTime.innerHTML = formatTime(audio.duration)
     currentTime.innerHTML = formatTime(0)
-    seekBar.max = Math.floor(audio.duration)    
+    seekBar.max = Math.floor(audio.duration)
 }
 // event triggered when playtime updates
 audio.ontimeupdate = () => {
     currentTime.innerHTML = formatTime(audio.currentTime)
-    if(!isSeeking){
+    if (!isSeeking) {
         seekBar.value = Math.floor(audio.currentTime)
     }
 }
 //event triggered when audio ends
-audio.onended = () =>{
-    currentTime.innerHTML = formatTime (0)
+audio.onended = () => {
+    currentTime.innerHTML = formatTime(0)
     seekBar.value = (0)
     playPauseButton.src = "images/play.svg"
 }
@@ -51,12 +55,17 @@ audio.onended = () =>{
 //SEEKBAR LISTENERS
 //event triggered on interaction with seek bar
 seekBar.oninput = () => {
-        isSeeking = true
+    isSeeking = true
 }
 //event triggered when seek bar is changed
 seekBar.onchange = () => {
     audio.currentTime = seekBar.value
     isSeeking = false
+}
+
+volumeBar.onchange = () => {
+    audio.volume = .value
+    console.log(audio.volume)
 }
 
 // UTILITY FUNCTIONS

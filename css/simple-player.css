@@ -21,14 +21,20 @@ h4 {
 }
 
 #heroContainer{
-
+    width: 450px;
+    height: 50px;
+    background-color: rgb(255, 159, 91);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #container{
-    width: 350px;
-    height: 50px;
-    background-color: rgb(255, 217, 190);
-    border-radius: 15px;
+    width: 130px;
+    height: 35px;
+    background-color: rgb(255, 185, 134);
+    border-radius: 8px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -56,5 +62,10 @@ h4 {
 
 #seekBar{
     width: 140px;
+    cursor: pointer;
+}
+
+#volumeBar{
+    height: 140px;
     cursor: pointer;
 }
