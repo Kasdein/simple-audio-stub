@@ -6,18 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Player</title>
+    <!-- set css source for the html file -->
     <link rel="stylesheet" href="/css/simple-player.css">
+    <!-- set javascript source for hte html file -->
     <script src="/js/simple-player.js" defer></script>
 </head>
 
 <body>
+    <h1>Choose a song!</h1>
+    <!-- creates container for a playlist -->
+    <div id="songSelect">
+        <!-- creates several containers with id "song" + "[given number]" and class "playlist"-->
+        <div id="song1">
+            <h4>Cruisin Sunset Avenue</h4>
+        </div>
+        <div id="song2">
+            <h4>Fryday Downtown</h4>
+        </div>
+        <div id="song3">
+            <h4>Jazzy Frenchy</h4>
+        </div>
+        <div id="song4">
+            <h4>The Beat of Nature</h1>        </div>
+    </div>
+    <!-- create a main container with id "heroContainer" -->
     <div id="heroContainer">
+        <!-- set image source to display in document with id "playPauseButton" -->
         <img id="playPauseButton" src="/images/play.svg">
+        <!-- creates a timer with ids "currentTime" showing time progress an "totalTime" showing length of current song -->
         <h4 id="currentTime">0:00</h4>
         <h4>/</h4>
         <h4 id="totalTime">0:00</h4>
+        <!-- creates a bar to allow the display of current time progress, if abled allows to search for precise time in song with the appropriate javascript code -->
         <input id="seekBar" type="range" min="0" value="0" disabled>
+        <!-- creates a container with id "container" -->
         <div id="container">
+            <!-- set image source to display in document with id "speakerImage" -->
+            <img id="speakerImage" src="/images/speaker.svg">
+            <!-- creates a bar that allows the display of current volume, if abled allows to ajust sound with the appropriate javascript code -->
             <input id="volumeBar" type="range" range="min" min="0" max="100" value="50" disabled>
         </div>
     </div>

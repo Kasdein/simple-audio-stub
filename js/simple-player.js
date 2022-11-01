@@ -1,10 +1,23 @@
-const currentTime = document.getElementById("currentTime")
-const totalTime = document.getElementById("totalTime")
-const playPauseButton = document.getElementById("playPauseButton")
-const seekBar = document.getElementById("seekBar")
-const volumeBar = document.getElementById("volumeBar")
-const audio = new Audio("audio/Soft-Background-for-Interview.webm");
+
+//CONSTANTS AND VARIABLES
+//Shorcut function for "getElementById"
+let get = function (id) {
+    return document.getElementById(id)
+}
+const currentTime = get("currentTime")
+const totalTime = get("totalTime")
+const playPauseButton = get("playPauseButton")
+const seekBar = get("seekBar")
+const volumeBar = get("volumeBar")
+const song1 = get("song1")
+const song2 = get ("song2")
+const song3 = get ("song3")
+const song4 = get ("song4")
+const audio = new Audio("audio/cruisin.webm");
 let isSeeking = false
+
+//set original volume to 50%
+volumeBar.value = 50
 
 //BUTTON LISTENER 
 //audio is played when triggered
@@ -21,23 +34,25 @@ playPauseButton.onclick = () => {
 audio.oncanplaythrough = () => {
     seekBar.disabled = false
     volumeBar.disabled = false
-    audio.volume = ".5"
 }
 
 // event triggered when audio plays 
 audio.onplay = () => {
     playPauseButton.src = "images/pause.svg"
 }
+
 // event triggers when audio is paused 
 audio.onpause = () => {
     playPauseButton.src = "images/play.svg"
 }
+
 // event triggered on metadata load 
 audio.onloadedmetadata = () => {
     totalTime.innerHTML = formatTime(audio.duration)
     currentTime.innerHTML = formatTime(0)
     seekBar.max = Math.floor(audio.duration)
 }
+
 // event triggered when playtime updates
 audio.ontimeupdate = () => {
     currentTime.innerHTML = formatTime(audio.currentTime)
@@ -45,6 +60,8 @@ audio.ontimeupdate = () => {
         seekBar.value = Math.floor(audio.currentTime)
     }
 }
+
+
 //event triggered when audio ends
 audio.onended = () => {
     currentTime.innerHTML = formatTime(0)
@@ -57,15 +74,37 @@ audio.onended = () => {
 seekBar.oninput = () => {
     isSeeking = true
 }
+
 //event triggered when seek bar is changed
 seekBar.onchange = () => {
     audio.currentTime = seekBar.value
     isSeeking = false
 }
 
+//event triggered when volume bar is changed
 volumeBar.onchange = () => {
-    audio.volume = .value
-    console.log(audio.volume)
+    audio.volume = volumeBar.value / 100
+}
+
+//changes song on trigger
+song1.onclick = () => {
+    audio.src = "audio/cruisin.webm"
+    playPauseButton.src = "images/play.svg"
+}
+
+song2.onclick = () => {
+    audio.src = "audio/downtown.webm"
+    playPauseButton.src = "images/play.svg"
+}
+
+song3.onclick = () => {
+    audio.src = "audio/jazzyfrenchy.webm"
+    playPauseButton.src = "images/play.svg"
+}
+
+song4.onclick = () => {
+    audio.src = "audio/nature.webm"
+    playPauseButton.src = "images/play.svg"
 }
 
 // UTILITY FUNCTIONS

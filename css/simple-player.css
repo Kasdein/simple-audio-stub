@@ -1,18 +1,22 @@
+/* removes default margin of the page an sets the width an height properties to "border-box" */
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
+/* defines default attributes and structure for the page */
 body {
     background-color: rgb(218, 165, 117);
     margin: 5px;
     display: flex;
-    flex-direction: row;
+    font-family: monospace;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 125vh;
+    height: 90vh;
 }
 
+/* text properties and padding */
 h4 {
     font-family: monospace;
     font-size: 1rem;
@@ -20,27 +24,28 @@ h4 {
     padding-bottom: 2px;
 }
 
-#heroContainer{
+/* sets properties and structure for "heroContainer" id */
+#heroContainer {
     width: 450px;
     height: 50px;
-    background-color: rgb(255, 159, 91);
+    background-color: rgb(185, 100, 38);
     border-radius: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
-}
 
-#container{
+}/* sets properties for "container" id */
+#container {
     width: 130px;
     height: 35px;
-    background-color: rgb(255, 185, 134);
+    background-color: rgb(227, 171, 32);
     border-radius: 8px;
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
-#playPauseButton{
+/* sets properties for "playPauseButton" id */
+#playPauseButton {
     margin-left: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -49,23 +54,79 @@ h4 {
     cursor: pointer;
 }
 
-#currentTime{
+/* sets properties for "speakerImage" id */
+#speakerImage {
+    width: 35px;
+    margin-left: 5px;
+    display: flex;
+}
+
+/* sets properties for "currentTime" id */
+#currentTime {
     margin-left: 10px;
     width: 45px;
 }
 
-#totalTime{
+/* sets properties for "totalTime" id */
+#totalTime {
     margin-right: 10px;
-    /* margin-left: 15px; */
     width: 50px;
 }
 
-#seekBar{
+/* sets properties for "seekBar" id */
+#seekBar {
     width: 140px;
+    margin-right: 5px;
     cursor: pointer;
 }
 
-#volumeBar{
-    height: 140px;
+/* sets properties for "volumeBar" id */
+#volumeBar {
+    margin: 5px;
+    width: 80px;
+    cursor: pointer;
+}
+
+/* sets properties for "songSelect" id */
+#songSelect {
+    width: 400px;
+    background-color: rgb(255, 218, 94);
+    margin: 20px;
+    padding-left: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column;
+}
+
+/* sets properties for "song1" id */
+#song1 {
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* sets properties for "song2" id */
+#song2 {
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* sets properties for "song3" id */
+#song3 {
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* sets properties for "song4" id */
+#song4 {
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+}
+
+/* changes the cursor when the mouse is over the "songSelect" container */
+#songSelect:hover {
     cursor: pointer;
 }
