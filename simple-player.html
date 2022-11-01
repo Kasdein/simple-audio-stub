@@ -12,12 +12,13 @@
 
 <body>
     <div id="heroContainer">
+        <img id="playPauseButton" src="/images/play.svg">
+        <h4 id="currentTime">0:00</h4>
+        <h4>/</h4>
+        <h4 id="totalTime">0:00</h4>
+        <input id="seekBar" type="range" min="0" value="0" disabled>
         <div id="container">
-            <img id="playPauseButton" src="/images/play.svg">
-            <h4 id="currentTime">0:00</h4>
-            <h4>/</h4>
-            <h4 id="totalTime">0:00</h4>
-            <input id="seekBar" type="range" min="0" value="0" disabled>
+            <input id="volumeBar" type="range" range="min" min="0" max="100" value="50" disabled>
         </div>
     </div>
 </body>
