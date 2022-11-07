@@ -44,7 +44,12 @@
             <!-- set image source to display in document with id "speakerImage" -->
             <img id="speakerImage" src="/images/speaker.svg">
             <!-- creates a bar that allows the display of current volume, if abled allows to ajust sound with the appropriate javascript code -->
-            <input id="volumeBar" type="range" range="min" min="0" max="100" value="50" disabled>
+            <div id="volumeContainer">
+                <!-- <i class="fa fa-volume-down"></i>
+                <div id="volumeBarAlt"></div> -->
+                <input id="volumeBar" type="range" range="min" min="0" max="100" value="50" disabled>
+                <!-- <i class="fa fa-volume-up"></i> -->
+            </div>
         </div>
     </div>
 </body>

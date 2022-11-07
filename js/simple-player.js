@@ -10,13 +10,15 @@ const playPauseButton = get("playPauseButton")
 const seekBar = get("seekBar")
 const volumeBar = get("volumeBar")
 const song1 = get("song1")
-const song2 = get ("song2")
-const song3 = get ("song3")
-const song4 = get ("song4")
+const song2 = get("song2")
+const song3 = get("song3")
+const song4 = get("song4")
 const audio = new Audio("audio/cruisin.webm");
+// let myMedia = document.createElement('media');
 let isSeeking = false
+let audioSample = ["songaudio/cruisin.webm1", "audio/downtown.webm", "audio/jazzyfrenchy.webm", "audio/nature.webm"]
 
-//set original volume to 50%
+// sets original volume to 50%
 volumeBar.value = 50
 
 //BUTTON LISTENER 
@@ -87,23 +89,25 @@ volumeBar.onchange = () => {
 }
 
 //changes song on trigger
+
+
 song1.onclick = () => {
-    audio.src = "audio/cruisin.webm"
+    audio.src = audioSample[0]
     playPauseButton.src = "images/play.svg"
 }
 
 song2.onclick = () => {
-    audio.src = "audio/downtown.webm"
+    audio.src = audioSample[1]
     playPauseButton.src = "images/play.svg"
 }
 
 song3.onclick = () => {
-    audio.src = "audio/jazzyfrenchy.webm"
+    audio.src = audioSample[2]
     playPauseButton.src = "images/play.svg"
 }
 
 song4.onclick = () => {
-    audio.src = "audio/nature.webm"
+    audio.src = audioSample[3]
     playPauseButton.src = "images/play.svg"
 }
 
@@ -128,4 +132,29 @@ function formatTime(secs) {
         return minutes + ":" + seconds;
     }
 }
+
+// $("volumeBarAlt").slider({
+//     min: 0,
+//     max: 100,
+//     value: 0,
+//     range: "min",
+//     slide: function (ui) {
+//         setVolume(ui.value / 100);
+//     }
+// });
+
+// function playAudio(myVolume) {
+//     myMedia.src = audioSample[0]
+//     myMedia.setAttribute('loop', 'loop')
+//     setVolume(myVolume)
+//     myMedia.play()
+// }
+
+// $("player").append(myMedia);
+// myMedia.id = "myMedia";
+
+// function setVolume(myVolume) {
+//     let myMedia = get('myMedia');
+//     myMedia.volume = myVolume;
+// }
 
