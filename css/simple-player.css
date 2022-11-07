@@ -34,7 +34,9 @@ h4 {
     flex-direction: row;
     align-items: center;
 
-}/* sets properties for "container" id */
+}
+
+/* sets properties for "container" id */
 #container {
     width: 130px;
     height: 35px;
@@ -85,64 +87,6 @@ h4 {
     margin: 5px;
     width: 80px;
     cursor: pointer;
-}	
-
-/* #volumeContainer {
-	width: 10px;
-	height: 163px;
-    display: flex;
-	position: relative;
-	margin-right: 10px;
-	top: 80px;
-} */
-
-i {
-    position: absolute;
-    margin-top: -6px;
-    color: #666;
-}
-
-i.fa-volume-down {
-    margin-left: -8px;
-}
-
-i.fa-volume-up {
-    margin-right: -8px;
-    right: 0;
-}
-
-
-#volumeBarAlt {
-	position: absolute;
-	left: 3px;
-	margin: 0 auto;
-	height: 5px;
-	width: 75px;
-	background: #555;
-	border-radius: 15px;
-}
-
-
-.ui-slider-range-min {
-    height: 5px;
-    width: 300px;
-    position: absolute;
-    background: red;
-    border: none;
-    border-radius: 10px;
-  outline: none;
-}
-
-.ui-slider-handle {
-    width: 20px;
-  height: 20px;
-    border-radius: 20px;
-  background: #FFF;
-  position: absolute;
-  margin-left: -8px;
-  margin-top: -8px;
-  cursor: pointer;
-  outline: none;
 }
 
 /* sets properties for "songSelect" id */

@@ -1,9 +1,9 @@
 
-//CONSTANTS AND VARIABLES
 //Shorcut function for "getElementById"
 let get = function (id) {
     return document.getElementById(id)
 }
+//CONSTANTS AND VARIABLES
 const currentTime = get("currentTime")
 const totalTime = get("totalTime")
 const playPauseButton = get("playPauseButton")
@@ -14,7 +14,6 @@ const song2 = get("song2")
 const song3 = get("song3")
 const song4 = get("song4")
 const audio = new Audio("audio/cruisin.webm");
-// let myMedia = document.createElement('media');
 let isSeeking = false
 let audioSample = ["songaudio/cruisin.webm1", "audio/downtown.webm", "audio/jazzyfrenchy.webm", "audio/nature.webm"]
 
@@ -88,9 +87,7 @@ volumeBar.onchange = () => {
     audio.volume = volumeBar.value / 100
 }
 
-//changes song on trigger
-
-
+// changes song on trigger
 song1.onclick = () => {
     audio.src = audioSample[0]
     playPauseButton.src = "images/play.svg"
@@ -132,29 +129,4 @@ function formatTime(secs) {
         return minutes + ":" + seconds;
     }
 }
-
-// $("volumeBarAlt").slider({
-//     min: 0,
-//     max: 100,
-//     value: 0,
-//     range: "min",
-//     slide: function (ui) {
-//         setVolume(ui.value / 100);
-//     }
-// });
-
-// function playAudio(myVolume) {
-//     myMedia.src = audioSample[0]
-//     myMedia.setAttribute('loop', 'loop')
-//     setVolume(myVolume)
-//     myMedia.play()
-// }
-
-// $("player").append(myMedia);
-// myMedia.id = "myMedia";
-
-// function setVolume(myVolume) {
-//     let myMedia = get('myMedia');
-//     myMedia.volume = myVolume;
-// }
 
